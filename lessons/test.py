@@ -1,0 +1,6 @@
+x = "comp110".isalpha()
+print(x)
+y = "110".isdigit()
+print(y)
+z = "comp110"[0].isalpha()
+print(z)
