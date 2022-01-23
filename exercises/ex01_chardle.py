@@ -6,7 +6,7 @@ __author__ = "730477803"
 input_word: str = input("Enter a 5 character word: ")
 input_letter: str = input("Enter a single character: ")
 num_match: int = 0 
-word_length: int = len(input_word) - 1
+word_length: int = len(input_word)
 
 if len(input_word) > 5:
     print("Error: word must contain 5 characters.")
@@ -29,5 +29,7 @@ for i in range(0, word_length):
         num_match = num_match + 1
 if num_match == 0:
     print(f"No instances of {input_letter} found in {input_word}")
-else: 
+elif num_match == 1: 
+    print(f"{num_match} instance of {input_letter} found in {input_word}")
+elif num_match > 1:
     print(f"{num_match} instances of {input_letter} found in {input_word}")
