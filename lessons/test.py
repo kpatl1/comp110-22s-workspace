@@ -1,6 +1,3 @@
-x = "comp110".isalpha()
+b: str = "3.14"
+x = len(b)
 print(x)
-y = "110".isdigit()
-print(y)
-z = "comp110"[0].isalpha()
-print(z)
