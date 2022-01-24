@@ -21,15 +21,30 @@ if len(input_letter) > 1:
     print("Error: Character must be a single character.")
     quit()
 
-print(f"Searching for {input_letter} in {input_word}")
+print("Searching for " + input_letter + " in " + input_word)
 
-for i in range(0, word_length):
-    if input_word[i] == input_letter:
-        print(f"{input_letter} found at index {i}")
-        num_match = num_match + 1
+if input_word[0] == input_letter:
+    print(input_letter + " found at index 0")
+    num_match = num_match + 1
+if input_word[1] == input_letter:
+    print(input_letter + " found at index 1")
+    num_match = num_match + 1
+if input_word[2] == input_letter:
+    print(input_letter + " found at index 2")
+    num_match = num_match + 1
+if input_word[3] == input_letter:
+    print(input_letter + " found at index 3")
+    num_match = num_match + 1
+if input_word[4] == input_letter:
+    print(input_letter + " found at index 4")
+    num_match = num_match + 1
+
+
 if num_match == 0:
-    print(f"No instances of {input_letter} found in {input_word}")
-elif num_match == 1: 
-    print(f"{num_match} instance of {input_letter} found in {input_word}")
-elif num_match > 1:
-    print(f"{num_match} instances of {input_letter} found in {input_word}")
+    print("No instances of " + input_letter + " found in " + input_word)
+else:
+    if num_match == 1: 
+        print(str(num_match) + " instance of " + input_letter + " found in " + input_word)
+    else:
+        if num_match > 1:
+            print(str(num_match) + " instances of " + input_letter + "found in " + input_word)
