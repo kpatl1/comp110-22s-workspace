@@ -47,4 +47,4 @@ else:
         print(str(num_match) + " instance of " + input_letter + " found in " + input_word)
     else:
         if num_match > 1:
-            print(str(num_match) + " instances of " + input_letter + "found in " + input_word)
+            print(str(num_match) + " instances of " + input_letter + " found in " + input_word)
