@@ -25,7 +25,7 @@ while word_index < len(guess):
     exact_match = False
     alt_index = 0 
     while alt_index < secret_length:
-        if guess[alt_index] == secret_word[word_index]:
+        if secret_word[alt_index] == guess[word_index]:
             # Checks each letter in guess and verifies if it matches an index of the secret word. 
             char_in_word = True 
             if alt_index == word_index:
