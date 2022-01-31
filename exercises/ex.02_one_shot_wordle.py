@@ -7,16 +7,13 @@ secret_length: int = len(secret_word)
 WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
 YELLOW_BOX: str = "\U0001F7E8"
-
 guess_incorrect = True
-
-guess: str = str(input(f"What is your {secret_length}-letter guess? "))
-
-
 word_index: int = 0 
 emoji_result: str = ""
 alt_index = 0 
 matching_char: str = ""
+
+guess: str = str(input(f"What is your {secret_length}-letter guess? "))
 
 # Makes sure guess is matching length to the secret word. 
 while secret_length != len(guess):
