@@ -1,4 +1,4 @@
-"""One shot wordle exercise"""
+"""One shot wordle exercise!"""
 
 __author__ = "730477803"
 
