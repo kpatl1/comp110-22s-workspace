@@ -18,21 +18,26 @@ emoji_result: str = ""
 alt_index = 0 
 matching_char: str = ""
 
-
+# Makes sure guess is matching length to the secret word. 
 while secret_length != len(guess):
     guess = input(f"That was not {secret_length} letters! Try again: ")
 
 while word_index < len(guess):
+    # Initialization of boolean operators to allow for proper iteration.
     char_in_word = False
     exact_match = False
     alt_index = 0 
     while alt_index < secret_length:
         if guess[alt_index] == secret_word[word_index]:
+            # Checks each letter in guess and verifies if it matches an index of the secret word. 
             char_in_word = True 
             if alt_index == word_index:
+                # Allows for green box because it checks if the index of the matching characters are the same. 
                 exact_match = True 
+        # Iterating the alternate index to check the next letter of the guess with the same character of the secret 
         alt_index += 1
     if char_in_word:
+        # If there was a match of characters, a green box will be appended if alt_index and word_index match. If not, then yellow. If not either, then white.
         if exact_match:
             emoji_result += GREEN_BOX
         else:
