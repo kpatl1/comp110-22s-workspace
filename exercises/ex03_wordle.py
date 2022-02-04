@@ -1,3 +1,7 @@
+"""A wordle recreation."""
+
+__author__ = "730477803"
+
 
 def contains_char(input_str: str, char: str) -> bool:
     """Checks if input character matches any of the character in the given word input."""
@@ -52,7 +56,7 @@ def input_guess(exp_len: int) -> str:
 def main() -> None:
     """The entrypoint of the program an main game loop"""
     turns = 1
-    secret_word: str = "woohoos"
+    secret_word: str = "codes"
     while turns < 7:
         print(f"=== Turn {turns} of 6 ===")
         guess = input_guess(len(secret_word))
@@ -62,6 +66,7 @@ def main() -> None:
             quit()
         turns += 1
     print("X/6 - Sorry, try again tomorrow!")
+    quit()
 
 
 if __name__ == "__main__":
