@@ -3,6 +3,8 @@
 
 __author__ = "730477803"
 
+__all__ = ['read_csv_rows', 'head', 'columnar', 'select', 'count', 'above_threshold']
+
 from csv import DictReader
 
 
@@ -84,3 +86,23 @@ def count(count_values: list[str]) -> dict[str, int]:
         else:
             result[item] = 1
     return result
+
+
+def above_threshold(data_table: dict[str, list[str]], wanted_keys: list[str], threshold: int) -> tuple[dict[str, list[int]], list[int]]:
+    """Returns a table with number values only greater than the given threshold while also converting them to integers. Also creates a list of row numbers that correspond with True values above given threshold."""
+    result: dict[str, list[int]] = {}
+    row_numbers_above_thresh: list[int] = []
+    for key in data_table:
+        if key in wanted_keys:
+            result_list: list[int] = []
+            column_list: list[str] = data_table[key]
+            row_list: list[str] = data_table["row"]
+            i: int = 0
+            for value in column_list:
+                value = int(value) 
+                if value > threshold:
+                    result_list.append(value)
+                    row_numbers_above_thresh.append(int(row_list[i]))
+                i += 1
+            result[key] = result_list
+    return result, row_numbers_above_thresh
