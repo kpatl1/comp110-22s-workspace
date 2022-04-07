@@ -71,3 +71,22 @@ def find_courses(classes: list[Course], prereq: str):
     for course in classes:
         if course.level > 400 and prereq in course.prerequisites:
             names.append(course.name)
+
+
+class Pond: 
+    ducks: list[str]
+    bread_remaining: int
+
+    def __init__(self, duck_list: list[str], bread: int):
+        self.ducks = duck_list
+        self.bread_remaining = bread
+
+    def feed_duck(self):
+        for duck in self.ducks:
+            if self.bread_remaining < 2:
+                print(f"{duck} didn't get fed.")
+            else:
+                self.bread_remaining -= 2
+    
+    def add_slices(self, num_slices: int):
+        self.bread_remaining += num_slices
